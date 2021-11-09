@@ -1,0 +1,4 @@
+# Ignore Jupyter's files
+
+*.ipynb
+.ipynb_checkpoints
