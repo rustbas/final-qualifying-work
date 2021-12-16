@@ -1,7 +1,6 @@
 from collections import deque
 from heapq import *
 
-
 def bfs(graph, start, finish):
     queue = deque([start])
     visited = {start: None}
@@ -54,8 +53,8 @@ def recover_path(vis, start, goal, path=None):
         return recover_path(vis, start, vis[goal], path)
     
 def heuristic(a, b):
-    return 10000
-#     return abs(a[0] - b[0]) + abs(a[1] - b[1])
+#    return 10000
+     return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
 def Astar(graph, start, finish):
     queue = []
@@ -79,6 +78,7 @@ def Astar(graph, start, finish):
                 cost_visited[neigh_node] = new_cost
                 visited[neigh_node] = cur_node
     return visited
+
 
 def Astar_rec(graph, start, finish):
     queue = []

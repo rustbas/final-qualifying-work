@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 def graph_gen(N=3, M=3, d=1, forbidden=[]):
     graph = {}
 
@@ -5,7 +7,7 @@ def graph_gen(N=3, M=3, d=1, forbidden=[]):
         for j in range(M):
             graph[(i, j)] = []
 
-    for i in range(N):
+    for i in tqdm(range(N)):
         for j in range(M):
             if (i, j) not in forbidden:
                 if i-1 != -1 and j-1 != -1 and (i-1, j-1) not in forbidden:
